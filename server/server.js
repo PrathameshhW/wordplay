@@ -11,6 +11,7 @@ import connectDB from "./db/connect.js";
 //route
 import authRoute from './routes/authRoute.js'
 
+import User from "./models/User.js";
 
 app.use(express.json())
 
