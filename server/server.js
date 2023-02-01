@@ -11,13 +11,21 @@ import connectDB from "./db/connect.js";
 //route
 import authRoute from './routes/authRoute.js'
 
-import User from "./models/User.js";
+//morgan
+import morgan from "morgan";
+if(process.env.NODE_ENV !== 'production'){
+    app.use(morgan('dev'))
+}
 
 app.use(express.json())
 
 
-app.get('/',(req,res)=>{
+app.get('/',(req,res) => {
     res.send('Welcome')
+})
+
+app.get('/api/v1',(req,res) => {
+    res.json({msg:'Here'})
 })
 
 

@@ -4,6 +4,7 @@ import HomePage from "./Pages/HomePage";
 import LoginPage from "./Pages/LoginPage";
 import RegisterPage from "./Pages/RegisterPage";
 import GamePage from "./Pages/GamePage";
+import Axios from "axios";
 
 // window.addEventListener(
 //   "contextmenu",
@@ -12,6 +13,7 @@ import GamePage from "./Pages/GamePage";
 //   },
 //   false
 // );
+
 const App = () => {
   return (
     <>
