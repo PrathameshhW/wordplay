@@ -21,7 +21,7 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link to="/Play">
+              <Link to="/play">
                 <span>Game</span>
               </Link>
             </li>
@@ -37,11 +37,11 @@ const Navbar = () => {
           </ul>
         </nav>
         <div className="buttons">
-          <Link to="/Register">
+          <Link to="/register">
             <button className="btn1">Register</button>
           </Link>
 
-          <Link to="/Login">
+          <Link to="/register">
             <button className="btn2">Login</button>
           </Link>
         </div>
