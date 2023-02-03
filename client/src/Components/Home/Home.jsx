@@ -13,9 +13,9 @@ const Home = () => {
             <h1>Be Patient, Just Like a Puzzle</h1>
             <h2>Get an amazing new play game experience</h2>
             <div className="content-buttons">
-              <Link to="/Play">
+              <Link to="/play">
                 <button className="content-btn1">
-                  <a href="">Enter the game</a>
+                  <label htmlFor="">Enter game</label>
                 </button>
               </Link>
 
