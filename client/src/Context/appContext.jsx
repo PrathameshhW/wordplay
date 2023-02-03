@@ -58,6 +58,7 @@ const AppProvider = ({ children }) => {
 
     try {
       const response = await axios.post("/api/v1/auth/register", currentUser);
+
       console.log(response);
 
       const { user, token } = response.data;
