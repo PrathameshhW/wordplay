@@ -2,7 +2,6 @@ import React from "react";
 import Home from "../Home/Home";
 import "../Navbar/Navbar.css";
 import { Link } from "react-router-dom";
-import Login from "../Login/Login";
 
 const Navbar = () => {
   return (

@@ -57,16 +57,18 @@ const AppProvider = ({ children }) => {
     });
 
     try {
+      console.log("Making axios post request...");
       const response = await axios.post("/api/v1/auth/register", currentUser);
 
-      console.log(response);
+      console.log("Response received:", response);
 
       const { user, token } = response.data;
       dispatch({ type: REGISTER_USER_SUCCESS, payload: { user, token } });
 
       addUserToLocalSt({ user, token });
     } catch (error) {
-      console.log(error.response);
+      console.log("Error received:", error);
+      console.log("Error response:", error.response);
 
       dispatch({
         type: REGISTER_USER_ERROR,
