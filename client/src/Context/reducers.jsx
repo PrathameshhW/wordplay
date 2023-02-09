@@ -8,7 +8,7 @@ import {
   DISPLAY_ALERT,
   CLEAR_ALERT,
 } from "../Context/actions";
-CLEAR_ALERT;
+
 const reducer = (state, action) => {
   if (action.type === DISPLAY_ALERT) {
     return {

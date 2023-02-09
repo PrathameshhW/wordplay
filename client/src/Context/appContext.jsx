@@ -1,5 +1,6 @@
 import React, { useReducer, useContext } from "react";
-CLEAR_ALERT;
+
+import reducer from "./reducers";
 import axios from "axios";
 
 import {
@@ -10,8 +11,8 @@ import {
   LOGIN_USER_ERROR,
   LOGIN_USER_SUCCESS,
   CLEAR_ALERT,
+  DISPLAY_ALERT,
 } from "../Context/actions";
-import reducer from "./reducers";
 
 const token = localStorage.getItem("token");
 const user = localStorage.getItem("user");
@@ -57,18 +58,18 @@ const AppProvider = ({ children }) => {
     });
 
     try {
-      console.log("Making axios post request...");
-      const response = await axios.post("/api/v1/auth/register", currentUser);
-
-      console.log("Response received:", response);
+      const response = await axios.post(
+        "http://api/v1/auth/register",
+        currentUser
+      );
+      console.log(response);
 
       const { user, token } = response.data;
       dispatch({ type: REGISTER_USER_SUCCESS, payload: { user, token } });
 
       addUserToLocalSt({ user, token });
     } catch (error) {
-      console.log("Error received:", error);
-      console.log("Error response:", error.response);
+      console.log(error.response);
 
       dispatch({
         type: REGISTER_USER_ERROR,
@@ -85,7 +86,10 @@ const AppProvider = ({ children }) => {
     });
 
     try {
-      const { data } = await axios.post("/api/v1/auth/login", currentUser);
+      const { data } = await axios.post(
+        "http://api/v1/auth/login",
+        currentUser
+      );
 
       const { user, token } = data;
 

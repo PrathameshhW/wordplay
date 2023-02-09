@@ -1,10 +1,11 @@
 import React from "react";
-import Wordplay from "../Components/Game/wordplay";
+import App from "../Components/Game/App";
+
 const GamePage = () => {
   return (
-    <>
-      <Wordplay />
-    </>
+    <div>
+      <App />
+    </div>
   );
 };
 
